@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.example.guest.gestionebiblioteca.R;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -26,7 +28,7 @@ public class statoprestiti {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             tv = new TextView(this);
-            this.setContentView(tv);
+            this.setContentView(R.layout.activity_statoprestiti);
             SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
             String oldTime = "19.02.2018, 12:00";//Timer date 1
             String NewTime = "20.02.2018, 14:00";//Timer date 2
