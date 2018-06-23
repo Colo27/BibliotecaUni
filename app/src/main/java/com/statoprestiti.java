@@ -1,16 +1,27 @@
 package com;
 
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by elisaboninella on 20/06/18.
  */
 
 public class statoprestiti {
     public class DemotimerActivity extends Activity {
-        /** Called when the activity is first created. */
+        /**
+         * Called when the activity is first created.
+         */
         TextView tv;
         long diff;
         long oldLong;
         long NewLong;
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -29,8 +40,9 @@ public class statoprestiti {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            MyCount counter = new MyCount(diff, 1000);
-            counter.start();
+            //MyCount counter = new MyCount(diff, 1000);
+            //counter.start();
         }
 
     }
+}
