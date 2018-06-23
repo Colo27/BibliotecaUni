@@ -22,10 +22,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cerca" />
+        <activity android:name=".statoprestiti" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
-        <activity android:name=".AccountActivity"></activity>
+        <activity android:name=".AccountActivity" />
+        <activity android:name=".PrestitiActivity"></activity>
     </application>
 
 </manifest>

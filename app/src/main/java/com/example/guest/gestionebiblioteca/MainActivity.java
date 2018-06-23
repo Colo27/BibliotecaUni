@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         stato_prestiti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent stato = new Intent(getBaseContext(), statoprestiti.class);
+                Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);
                 startActivity(stato);
             }
         });

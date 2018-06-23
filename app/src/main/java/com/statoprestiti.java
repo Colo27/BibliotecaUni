@@ -28,7 +28,7 @@ public class statoprestiti {
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             tv = new TextView(this);
-            this.setContentView(R.layout.activity_statoprestiti);
+            this.setContentView(tv);
             SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy, HH:mm");
             String oldTime = "19.02.2018, 12:00";//Timer date 1
             String NewTime = "20.02.2018, 14:00";//Timer date 2
