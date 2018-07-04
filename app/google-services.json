@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "464535830967",
+    "firebase_url": "https://bibliotecauni-6ac28.firebaseio.com",
+    "project_id": "bibliotecauni-6ac28",
+    "storage_bucket": "bibliotecauni-6ac28.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464535830967:android:11e4b6de509ec68c",
+        "android_client_info": {
+          "package_name": "com.example.guest.gestionebiblioteca"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464535830967-dabiujiodtgo1vjt1aiimmidkk7mdp36.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.guest.gestionebiblioteca",
+            "certificate_hash": "3851c618bdf8d6786935721900a936605c95596a"
+          }
+        },
+        {
+          "client_id": "464535830967-gvriduic73v1gt55djntmsj42hpt6fui.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGKqSSa6b66ZDxvkdX3ufGdPXNNeJxDlU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464535830967-gvriduic73v1gt55djntmsj42hpt6fui.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
