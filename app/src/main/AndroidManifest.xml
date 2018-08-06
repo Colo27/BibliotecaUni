@@ -27,7 +27,11 @@
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
         <activity android:name=".AccountActivity" />
-        <activity android:name=".PrestitiActivity"></activity>
+        <activity android:name=".PrestitiActivity" />
+        <activity
+            android:name=".PrenotaActivity"
+            android:label="@string/title_activity_prenota"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

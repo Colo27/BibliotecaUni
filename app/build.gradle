@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
+
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.guest.gestionebiblioteca"
@@ -22,6 +23,8 @@ dependencies {
     implementation fileTree(include: ['*jar'], dir: 'libs')
     implementation 'com.android.support:design:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    //implementation 'com.google.firebase:firebase-auth:11.6.0'
+    implementation 'com.google.firebase:firebase-database:11.6.2'
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
 
@@ -32,3 +35,7 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+//compile 'com.google.firebase:firebase-core:16.0.0'
+//compile 'com.google.firebase:firebase-database:16.0.1'
+
