@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.example.guest.gestionebiblioteca.aggiungi_libro">
+
+
+    <EditText
+        android:id="@+id/ed_titolo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="titolo"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+
+    <EditText
+        android:id="@+id/ed_anno"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="anno"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ed_categoria"
+        android:hint="categoria"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"/>
+
+
+    <Button
+        android:id="@+id/button_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnAddOnClick"
+        android:text="aggiungi libro" />
+
+</LinearLayout>

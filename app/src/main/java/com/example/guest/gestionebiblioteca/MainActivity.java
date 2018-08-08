@@ -35,8 +35,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
         CardView stato_prestiti = (CardView) findViewById(R.id.StatoPrestitiLayout);
         stato_prestiti.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);
+                startActivity(stato);
+            }
+        });
+
+
+        CardView aggiungi_libro = (CardView) findViewById(R.id.aggiungi_libro);
+        aggiungi_libro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);

@@ -106,4 +106,7 @@
         completions."
     </string>
     <string name="title_activity_prenota">PrenotaActivity</string>
+    <string name="title_activity_registrati">Registrati</string>
+    <string name="title_activity_miei_libri">miei_libri</string>
+    <string name="title_activity_aggiungi_libro">aggiungi_libro</string>
 </resources>

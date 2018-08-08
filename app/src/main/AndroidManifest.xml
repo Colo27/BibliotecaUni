@@ -31,6 +31,18 @@
         <activity
             android:name=".PrenotaActivity"
             android:label="@string/title_activity_prenota"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Registrati"
+            android:label="@string/title_activity_registrati"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".miei_libri"
+            android:label="@string/title_activity_miei_libri"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".aggiungi_libro"
+            android:label="@string/title_activity_aggiungi_libro"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
