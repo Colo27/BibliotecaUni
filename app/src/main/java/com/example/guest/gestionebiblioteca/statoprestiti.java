@@ -1,4 +1,4 @@
-package com;
+package com.example.guest.gestionebiblioteca;
 
 import android.app.Activity;
 import android.os.Bundle;
