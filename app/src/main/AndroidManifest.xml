@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cerca" />
-        <activity android:name=".statoprestiti" />
+        <activity android:name=".StatoPrestiti" />
         <activity
             android:name=".LoginActivity"
             android:label="@string/title_activity_login" />
@@ -37,7 +37,7 @@
             android:label="@string/title_activity_registrati"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".miei_libri"
+            android:name=".MieiLibri"
             android:label="@string/title_activity_miei_libri"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
