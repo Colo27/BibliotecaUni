@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
         miei_libri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent account = new Intent(getBaseContext(), PrestitiActivity.class);
+                Intent account = new Intent(getBaseContext(), MieiLibri.class);
                 startActivity(account);
             }
         });
@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
         aggiungi_libro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nuovo = new Intent(getBaseContext(), miei_libri.class);
+                Intent nuovo = new Intent(getBaseContext(), aggiungi_libro.class);
                 startActivity(nuovo);
             }
         });

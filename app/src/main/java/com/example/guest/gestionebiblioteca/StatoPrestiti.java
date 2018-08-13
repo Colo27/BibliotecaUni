@@ -14,7 +14,7 @@ import java.util.Date;
  * Created by elisaboninella on 20/06/18.
  */
 
-public class statoprestiti {
+public class StatoPrestiti {
     public class DemotimerActivity extends Activity {
         /**
          * Called when the activity is first created.
