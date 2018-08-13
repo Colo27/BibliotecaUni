@@ -89,20 +89,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        CardView info_generali = (CardView) findViewById(R.id.but1);
-        info_generali.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent cambia = new Intent (getBaseContext(), InfoGenerali.class);
-                startActivity(cambia);
-            }
-        });
+        //CardView info_generali = (CardView) findViewById(R.id.textView5);
+        //info_generali.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  Intent cambia = new Intent (getBaseContext(), InfoGenerali.class);
+        //startActivity(cambia);
+          //  }
+       // });
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
     }
 }
