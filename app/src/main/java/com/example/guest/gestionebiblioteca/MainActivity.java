@@ -84,10 +84,21 @@ public class MainActivity extends AppCompatActivity {
         aggiungi_libro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);
-                startActivity(stato);
+                Intent nuovo = new Intent(getBaseContext(), miei_libri.class);
+                startActivity(nuovo);
             }
         });
+
+        //CardView info_generali = (CardView) findViewById(R.id.textView5);
+        //info_generali.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View v) {
+              //  Intent cambia = new Intent (getBaseContext(), InfoGenerali.class);
+        //startActivity(cambia);
+          //  }
+       // });
+
+
 
 
     }

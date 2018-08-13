@@ -14,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,12 +22,19 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cerca" />
+<<<<<<< HEAD
         <activity android:name=".StatoPrestiti" />
         <!-- una volta li sotto c'era scritto LoginActivity ma mi si era introiato tutto
          e quindi ho messo main così è tornato a posto ma non son sicuro vada bene così -->
 
         <activity android:name=".MainActivity"
                   android:label="@string/title_activity_login" />
+=======
+        <activity android:name=".statoprestiti" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" />
+>>>>>>> master
         <activity android:name=".AccountActivity" />
         <activity android:name=".PrestitiActivity" />
         <activity
@@ -39,7 +46,7 @@
             android:label="@string/title_activity_registrati"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MieiLibri"
+            android:name=".miei_libri"
             android:label="@string/title_activity_miei_libri"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

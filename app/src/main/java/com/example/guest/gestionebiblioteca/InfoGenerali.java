@@ -3,11 +3,11 @@ package com.example.guest.gestionebiblioteca;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class AccountActivity extends AppCompatActivity {
+public class InfoGenerali extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_info_generali);
     }
 }

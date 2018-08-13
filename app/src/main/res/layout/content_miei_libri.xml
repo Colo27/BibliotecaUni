@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
-    tools:context="com.example.guest.gestionebiblioteca.MieiLibri">
+    tools:context="com.example.guest.gestionebiblioteca.miei_libri">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_chat"

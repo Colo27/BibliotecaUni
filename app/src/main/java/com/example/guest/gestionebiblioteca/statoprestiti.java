@@ -2,7 +2,6 @@ package com.example.guest.gestionebiblioteca;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.example.guest.gestionebiblioteca.R;
@@ -15,7 +14,7 @@ import java.util.Date;
  * Created by elisaboninella on 20/06/18.
  */
 
-public class StatoPrestiti extends AppCompatActivity {
+public class statoprestiti {
     public class DemotimerActivity extends Activity {
         /**
          * Called when the activity is first created.
