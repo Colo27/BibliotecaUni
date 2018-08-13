@@ -14,6 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,34 +23,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity android:name=".MainActivity" />
         <activity android:name=".Cerca" />
-       <activity android:name=".MainActivity" />
-        <!-- una volta li sotto c'era scritto LoginActivity ma mi si era introiato tutto
-        e quindi ho messo main così è tornato a posto ma non son sicuro vada bene così -->
-
         <activity android:name=".InfoGenerali"
-                  android:label="@string/title_activity_login" />x
-
-
-        <!-- <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" /> -->
-
->>>>>>> master
+                  android:label="@string/title_activity_login" />
+   <!-- <activity android:name=".LoginActivity"
+                  android:label="@string/title_activity_login" /> -->
         <activity android:name=".AccountActivity" />
         <activity android:name=".PrestitiActivity" />
+        <activity android:name=".PrenotaActivity"
+                  android:label="@string/title_activity_prenota"
+                  android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".PrenotaActivity"
-            android:label="@string/title_activity_prenota"
-            android:theme="@style/AppTheme.NoActionBar" />
+                  android:name=".Registrati"
+                  android:label="@string/title_activity_registrati"
+                  android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Registrati"
-            android:label="@string/title_activity_registrati"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".aggiungi_libro"
-            android:label="@string/title_activity_aggiungi_libro"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+                 android:name=".aggiungi_libro"
+                 android:label="@string/title_activity_aggiungi_libro"
+                 android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
