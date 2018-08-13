@@ -23,9 +23,11 @@
         </activity>
         <activity android:name=".Cerca" />
         <activity android:name=".StatoPrestiti" />
-        <activity
-            android:name=".LoginActivity"
-            android:label="@string/title_activity_login" />
+        <!-- una volta li sotto c'era scritto LoginActivity ma mi si era introiato tutto
+         e quindi ho messo main così è tornato a posto ma non son sicuro vada bene così -->
+
+        <activity android:name=".MainActivity"
+                  android:label="@string/title_activity_login" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".PrestitiActivity" />
         <activity
