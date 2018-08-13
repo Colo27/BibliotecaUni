@@ -22,13 +22,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cerca" />
-        <!--
-<<<<<<< HEAD
-       <activity android:name=".StatoPrestiti" />
-        una volta li sotto c'era scritto LoginActivity ma mi si era introiato tutto
+       <activity android:name=".MainActivity" />
+        <!-- una volta li sotto c'era scritto LoginActivity ma mi si era introiato tutto
         e quindi ho messo main così è tornato a posto ma non son sicuro vada bene così -->
 
-        <activity android:name=".MainActivity"
+        <activity android:name=".InfoGenerali"
                   android:label="@string/title_activity_login" />x
 
 
