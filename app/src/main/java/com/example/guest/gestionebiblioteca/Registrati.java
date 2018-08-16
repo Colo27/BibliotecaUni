@@ -33,7 +33,7 @@ public class Registrati extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
         Toast.makeText(this,"Utente già Loggato",Toast.LENGTH_SHORT);
 
     }
@@ -117,15 +117,6 @@ public class Registrati extends AppCompatActivity {
         setContentView(R.layout.activity_registrati);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         Button registrati = findViewById(R.id.btnRegistrati);
         registrati.setOnClickListener(new View.OnClickListener() {

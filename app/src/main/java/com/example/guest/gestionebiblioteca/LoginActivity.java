@@ -62,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
     private Button mEmailSignInButton;
+    private TextView mRegistrati;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +72,8 @@ public class LoginActivity extends AppCompatActivity {
         mEmailView = (EditText) findViewById(R.id.email);
         mPasswordView = (EditText) findViewById(R.id.password);
         mAuth = FirebaseAuth.getInstance();
+        mRegistrati = (TextView) findViewById(R.id.registrati);
+
 
         //button della mail lol
         mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
@@ -81,12 +84,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        mRegistrati.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, Registrati.class);
+                startActivity(intent);
+            }
+        });
+
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
 
     private void attemptLogin() {
-        if (mAuth != null) {
+        if (mAuth == null) {
             return;
         }
 

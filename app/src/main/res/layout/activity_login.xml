@@ -74,6 +74,7 @@
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/registrati"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Non hai un account? Registrati!"
