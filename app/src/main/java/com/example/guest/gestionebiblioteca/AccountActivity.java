@@ -12,12 +12,13 @@ public class AccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
+
+        TextView informazioni = findViewById(R.id.textView5);
+
+        TextView aggiorna = findViewById(R.id.textView6);
+
+        TextView logout = findViewById(R.id.textView7);
     }
-    TextView informazioni = findViewById(R.id.textView5);
-
-    TextView aggiorna = findViewById(R.id.textView6);
-
-    TextView logout = findViewById(R.id.textView7);
 
 }
 

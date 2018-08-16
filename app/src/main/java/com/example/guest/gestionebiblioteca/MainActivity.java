@@ -21,19 +21,6 @@ public class MainActivity extends AppCompatActivity {
     private String today;
     private String user;
 
-    private void updateUI() {
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser == null) {
-            // Name, email address, and profile photo Url
-
-            Intent intentToLogin = new Intent(this, LoginActivity.class);
-            finish();
-            startActivity(intentToLogin);
-        }
-    }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         CardView cerca = (CardView) findViewById(R.id.cerca_layout);
         CardView account = (CardView) findViewById(R.id.account_layout);
         CardView miei_libri = (CardView) findViewById(R.id.miei_libri);
+        CardView stato_prestiti = (CardView) findViewById(R.id.StatoPrestitiLayout);
+        CardView aggiungi_libro = (CardView) findViewById(R.id.aggiungi_libro);
 
         cerca.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         miei_libri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -69,8 +57,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        CardView stato_prestiti = (CardView) findViewById(R.id.StatoPrestitiLayout);
         stato_prestiti.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -79,16 +65,27 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-        CardView aggiungi_libro = (CardView) findViewById(R.id.aggiungi_libro);
         aggiungi_libro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);
+                Intent stato = new Intent(getBaseContext(), AggiungiLibro.class);
                 startActivity(stato);
             }
         });
 
 
+    }
+
+
+    private void updateUI() {
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if (currentUser == null) {
+            // Name, email address, and profile photo Url
+
+            Intent intentToLogin = new Intent(this, LoginActivity.class);
+            finish();
+            startActivity(intentToLogin);
+        }
     }
 }

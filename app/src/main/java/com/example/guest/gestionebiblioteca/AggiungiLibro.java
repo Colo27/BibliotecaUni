@@ -11,7 +11,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 
-public class aggiungi_libro extends AppCompatActivity {
+public class AggiungiLibro extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +31,13 @@ public class aggiungi_libro extends AppCompatActivity {
             }
         });
 
-        //ho aggiunto questo come prova per vedere se adesso va su aggiungi_libro
+        //ho aggiunto questo come prova per vedere se adesso va su AggiungiLibro
         //se qualcosa va in troia ricordarsi che ho aggiunto questo e quindi cancellarlo
         Button aggiungi_libro = findViewById(R.id.aggiungi_libro);
         aggiungi_libro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent aggiungi_libro = new Intent(getBaseContext(), aggiungi_libro.class);
+                Intent aggiungi_libro = new Intent(getBaseContext(), AggiungiLibro.class);
                 startActivity(aggiungi_libro);
             }
         });

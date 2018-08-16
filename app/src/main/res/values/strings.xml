@@ -109,4 +109,8 @@
     <string name="title_activity_registrati">Registrati</string>
     <string name="title_activity_miei_libri">miei_libri</string>
     <string name="title_activity_aggiungi_libro">aggiungi_libro</string>
+
+    <string name="common_google_play_services_unknown_issue">"Unknown issue."</string>
+
+
 </resources>

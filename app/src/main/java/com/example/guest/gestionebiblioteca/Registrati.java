@@ -57,9 +57,6 @@ public class Registrati extends AppCompatActivity {
 
                 if(checkValueRegistration(name, mail, pass, confirmPass)){
                     createFirebaseUser(mail, pass, name);
-
-                    Intent intent = new Intent(getBaseContext(), LoginActivity.class);
-                    startActivity(intent);
                 }
             }
         });
