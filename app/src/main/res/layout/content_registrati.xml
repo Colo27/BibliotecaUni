@@ -246,7 +246,6 @@
         android:layout_below="@+id/lay_passwordConfirm"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
-        android:onClick="btnRegistratiClick"
         android:text="REGISTRATI"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="#000"

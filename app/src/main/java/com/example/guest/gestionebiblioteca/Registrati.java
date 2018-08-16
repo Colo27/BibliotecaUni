@@ -27,63 +27,127 @@ public class Registrati extends AppCompatActivity {
     EditText mEmail;
     EditText mPassword;
     EditText mNome;
+    TextView tvLogin;
+    Button registrati;
+
 
 
     private FirebaseAuth mAuth;
-    @Override
-    public void onStart() {
-        super.onStart();
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        Toast.makeText(this,"Utente già Loggato",Toast.LENGTH_SHORT);
 
-    }
-
-    //codice da provare con caffo perchè non va l'initUI
-    /*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrati);
-        initUI();
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        mConfermaPassword = findViewById(R.id.etRegPassConf);
+        mEmail = findViewById(R.id.etRegEmail);
+        mPassword = findViewById(R.id.etRegPass);
+        mNome = findViewById(R.id.etRegName);
+
+        registrati = findViewById(R.id.btnRegistrati);
+        registrati.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String name = mNome.getText().toString();
+                String mail = mEmail.getText().toString();
+                String pass = mPassword.getText().toString();
+                String confirmPass = mConfermaPassword.getText().toString();
+
+                if(checkValueRegistration(name, mail, pass, confirmPass)){
+                    createFirebaseUser(mail, pass, name);
+
+                    Intent intent = new Intent(getBaseContext(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            }
+        });
+
+        tvLogin = findViewById(R.id.tvLogin);
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent tvLogin = new Intent(getBaseContext(), LoginActivity.class);
+                startActivity(tvLogin);
+            }
+
+        });
 
         mAuth = FirebaseAuth.getInstance();
     }
-*/
+
+    private boolean checkValueRegistration(String name, String mail, String pass, String confirmPass){
+        boolean check = true;
+
+
+        if(name.isEmpty()){
+            check = false;
+            mNome.setError("SCEMO");
+
+        }
+
+        if(mail.isEmpty() && !mail.contains("@")) {
+            check = false;
+            mEmail.setError("SCIEMO METTI U CHIOCCILA E QUALCOUSA");
+        }
+
+        if(pass.length() < 7) {
+            check = false;
+            mPassword.setError("Hai cacciato una password con meno di 7 caratteri :c");
+        }
+
+        if(!confirmPass.equals(pass)){
+            check = false;
+            mConfermaPassword.setError("Le password che hai scritto a quanto pare non sono uguali");
+        }
+
+        return check;
+    }
 
     private void createFirebaseUser(String email, String password,final String nome){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("Registration", "createUserWithEmail:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-//questo non va e non so perchè -> //Toast.makeText(Registrati.this, "Authentication success" Toast.LENGTH_SHORT).show();
-                             //showDialog("Registrazione effettuata con successo","Successo",android.R.drawable.ic_dialog_info);
 
-                            //TODO caricare nome su Firebase
-                            //setNome(nome);
-                            Intent intent= new Intent(Registrati.this,LoginActivity.class);
-                            finish();
+                            caricaNome(nome);
+
+
+                            Intent intent= new Intent(Registrati.this, LoginActivity.class);
                             startActivity(intent);
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w("Registration", "createUserWithEmail:failure", task.getException());
-                            //Chiamare l'alert dialog
-                            //showDialog("Errore nella registrazione","Errore",android.R.drawable.ic_dialog_alert);
-                            // Toast.makeText(RegisterActivity.this, "Authentication failed." Toast.LENGTH_SHORT).show();
                         }
-
-                        // ...
                     }
                 });
-
-
-
-
     }
 
+    private void caricaNome(String nome) {
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        UserProfileChangeRequest changeRequest = new UserProfileChangeRequest.Builder()
+                .setDisplayName(nome)
+                .build();
+
+        user.updateProfile(changeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()) {
+                    Log.i("setName", "nome caricato con successo");
+
+                } else {
+                    Log.i("setName", "nome non caricato con successo");
+                }
+
+            }
+        });
+
+    }
 
     //questo mi instupidisce il blocco sotto lol
 
@@ -111,36 +175,6 @@ public class Registrati extends AppCompatActivity {
 */
 
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registrati);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        Button registrati = findViewById(R.id.btnRegistrati);
-        registrati.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent registrati = new Intent(getBaseContext(), LoginActivity.class);
-                startActivity(registrati);
-            }
-        });
-
-        TextView tvLogin = findViewById(R.id.tvLogin);
-        tvLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent tvLogin = new Intent(getBaseContext(), LoginActivity.class);
-                startActivity(tvLogin);
-
-
-            }
-
-        });
-
-
-    }
 }
 
