@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         miei_libri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent account = new Intent(getBaseContext(), PrestitiActivity.class);
+                Intent account = new Intent(getBaseContext(), MieiLibri.class);
                 startActivity(account);
             }
         });

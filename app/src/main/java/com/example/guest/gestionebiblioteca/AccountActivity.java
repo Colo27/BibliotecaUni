@@ -11,22 +11,33 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class AccountActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private FirebaseUser mUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        mAuth = FirebaseAuth.getInstance();
+        mUser = mAuth.getCurrentUser();
 
         TextView name = findViewById(R.id.textView3);
 
-        name.setText(user.getDisplayName());
+        name.setText(mUser.getDisplayName());
 
         TextView informazioni = findViewById(R.id.textView5);
 
-        TextView aggiorna = findViewById(R.id.textView6);
-
         TextView logout = findViewById(R.id.textView7);
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mAuth.signOut();
+                Intent logout = new Intent(AccountActivity.this, LoginActivity.class);
+                startActivity(logout);
+            }
+        });
+
     }
 
 }
