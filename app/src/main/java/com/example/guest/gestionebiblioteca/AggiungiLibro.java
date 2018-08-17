@@ -20,6 +20,7 @@ public class AggiungiLibro extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
         Button aggiungiLibro = findViewById(R.id.button_add);
         aggiungiLibro.setOnClickListener(new View.OnClickListener() {
             @Override

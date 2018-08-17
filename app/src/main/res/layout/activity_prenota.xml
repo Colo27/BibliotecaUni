@@ -20,7 +20,12 @@
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_prenota" />
+    <include
+        layout="@layout/content_prenota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="30dp"
+        tools:layout_editor_absoluteY="220dp" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
