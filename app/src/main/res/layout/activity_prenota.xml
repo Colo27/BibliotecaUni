@@ -23,7 +23,7 @@
     <include
         layout="@layout/content_prenota"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="358dp"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="220dp" />
 

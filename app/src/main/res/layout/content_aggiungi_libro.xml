@@ -7,22 +7,12 @@
     tools:context="com.example.guest.gestionebiblioteca.AggiungiLibro">
 
 
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/ed_categoria"
-        android:hint="categoria"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"/>
-
 
     <EditText
         android:id="@+id/ed_titolo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="titolo"
+        android:layout_height="118dp"
+        android:hint="Titolo"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textColor="@color/colorPrimaryDark"
@@ -30,10 +20,10 @@
         android:textStyle="bold" />
 
     <EditText
-        android:id="@+id/ed_anno"
+        android:id="@+id/ed_autore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="anno"
+        android:hint="Autore"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:textColor="@color/colorPrimaryDark"
