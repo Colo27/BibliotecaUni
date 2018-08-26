@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
 
-
+        <!-- una volta funzionava tutto porcacciodd** -->
         <activity android:name=".MainActivity" />
         <activity android:name=".Cerca" />
         <activity android:name=".InfoGenerali"

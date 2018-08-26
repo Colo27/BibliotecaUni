@@ -8,7 +8,13 @@
     android:orientation="vertical"
     tools:context=".Cerca">
 
-    <EditText
+    <searchable xmlns:android="http://schemas.android.com/apk/res/android"
+        android:label="@string/app_label"
+        android:hint="@string/search_hint" >
+    </searchable>
+
+    <SearchView
+        android:id="@+id/action_cerca"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_marginTop="2dp"
@@ -16,13 +22,9 @@
         android:layout_gravity="center"
         android:drawableLeft="@drawable/cercaicona"
         android:hint="Cerca"
-
-
-
-    />
-
-
-   <android.support.v7.widget.RecyclerView
+        />
+    
+    <android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:layout_marginHorizontal="15dp"
