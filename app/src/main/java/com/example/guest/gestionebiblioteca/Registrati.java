@@ -81,23 +81,23 @@ public class Registrati extends AppCompatActivity {
 
         if(name.isEmpty()){
             check = false;
-            mNome.setError("SCEMO");
+            mNome.setError("NON HAI INSERITO IL NOME");
 
         }
 
         if(mail.isEmpty() && !mail.contains("@")) {
             check = false;
-            mEmail.setError("SCIEMO METTI U CHIOCCILA E QUALCOUSA");
+            mEmail.setError("ERRORE: INSERISCI LA MAIL CORRETTA");
         }
 
         if(pass.length() < 7) {
             check = false;
-            mPassword.setError("Hai cacciato una password con meno di 7 caratteri :c");
+            mPassword.setError("INSERISCI ALMENO 7 CARATTERI");
         }
 
         if(!confirmPass.equals(pass)){
             check = false;
-            mConfermaPassword.setError("Le password che hai scritto a quanto pare non sono uguali");
+            mConfermaPassword.setError("LA PASSWORD INSERITA NON CORRISPONDE");
         }
 
         return check;
