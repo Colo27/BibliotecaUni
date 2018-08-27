@@ -26,12 +26,11 @@ public class AggiungiLibro extends AppCompatActivity {
 
     private DatabaseReference mDatabaseReference;
     private String mUserId;
-    private String id;
     private String user;
 
     //UI
     private EditText mTitolo;
-    private Spinner mAutore;
+    private EditText mAutore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,35 +43,23 @@ public class AggiungiLibro extends AppCompatActivity {
         user= getIntent().getStringExtra("user");
 
         mAuth = FirebaseAuth.getInstance();
-        mUser=mAuth.getCurrentUser();
+        mUser = mAuth.getCurrentUser();
 
         setTitle(mAuth.getCurrentUser().getDisplayName());
         mUserId = mUser.getUid();
 
-
         mAutore =(EditText)findViewById(R.id.ed_autore);
-
-        ArrayAdapter adapter= ArrayAdapter.createFromResource(this,R.array.category,android.R.layout.simple_spinner_item);
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        mAutore.setAdapter(adapter);
-
         mTitolo=(EditText) findViewById(R.id.ed_titolo);
-
-
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
         Button aggiungiLibro = findViewById(R.id.button_add);
         aggiungiLibro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent aggiungi_libro = new Intent(getBaseContext(), AggiungiLibro.class);
-                startActivity(aggiungi_libro);
+                mDatabaseReference.child("users").child("admin").push().setValue(new Libro(mAutore.getText().toString(), mTitolo.getText().toString()));
+                Intent intent = new Intent(AggiungiLibro.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        updateUI();
 }

@@ -14,11 +14,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class PrenotaActivity extends AppCompatActivity {
 
-    private static final String TAG="PrenotaActivity";
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
     private DatabaseReference mDatabaseReference;
@@ -36,7 +36,7 @@ public class PrenotaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account);
+        setContentView(R.layout.activity_prenota);
 
         mAuth = FirebaseAuth.getInstance();
         mAuth = FirebaseAuth.getInstance();
@@ -47,14 +47,14 @@ public class PrenotaActivity extends AppCompatActivity {
 
         mInputAutore=(TextView)findViewById(R.id.ed_autore);
         mInputTitolo=(TextView)findViewById(R.id.ed_titolo);
-        btnPrenota=(Button)findViewById(R.id.btnPersonal);
+        btnPrenota=(Button)findViewById(R.id.btnPrenotaLibro);
 
         user= getIntent().getStringExtra("user");
 
 
-        mAutore=getIntent().getStringExtra("autore");
-        mTitolo= getIntent().getStringExtra("titolo");
-        mKey= getIntent().getStringExtra("key");
+        mAutore = getIntent().getStringExtra("autore");
+        mTitolo = getIntent().getStringExtra("titolo");
+        mKey = getIntent().getStringExtra("key");
 
 
         mInputAutore.setText("Autore: "+mAutore);
@@ -64,51 +64,49 @@ public class PrenotaActivity extends AppCompatActivity {
 
 
     }
-    public void btnPrenotaOnClick(View view){
-        if(user.equals("admin")){
-            Toast.makeText(this,"Operazione non concessa",Toast.LENGTH_LONG).show();
-        }else{
-            Libro movie= new Libro(mAutore, mTitolo,);
+    public void btnPrenotaOnClick(View view) {
+        if (user.equals("admin")) {
+            Toast.makeText(this, "Operazione non concessa", Toast.LENGTH_LONG).show();
+        } else {
+            Prenotazione prenotazione = new Prenotazione(new Libro(mAutore, mTitolo), getToday(), getDeadLine());
 
-            Libro.setDate_start(getToday());
-            Libro.setDate_finish(getDeadLine());
+            mDatabaseReference.child("users").child(mUserId).push().setValue(prenotazione);
 
-            mDatabaseReference.child("users").child(mUserId).push().setValue(libro);
 
             mDatabaseReference.child("users").child("admin").child(mAutore).child(mKey).removeValue();
-            Toast.makeText(this,"Prenotazione effettuata con successo",Toast.LENGTH_LONG).show();
+
+            Toast.makeText(this, "Prenotazione effettuata con successo", Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(this, PrestitiActivity.class);
-            intent.putExtra("user","user");
+            intent.putExtra("user", "user");
             finish();
             startActivity(intent);
         }
+    }
 
-        private void updateUI(){
-            FirebaseUser currentUser = mAuth.getCurrentUser();
+    private void updateUI(){
+        FirebaseUser currentUser = mAuth.getCurrentUser();
 
-            if (currentUser == null) {
-                // Name, email address, and profile photo Url
-
-                Intent intentToLogin = new Intent(this, MainActivity.class);
-                finish();
-                startActivity(intentToLogin);
-            }
+        if (currentUser == null) {
+            // Name, email address, and profile photo Url
+            Intent intentToLogin = new Intent(this, MainActivity.class);
+            finish();
+            startActivity(intentToLogin);
         }
+    }
+
     public String getToday() {
         GregorianCalendar gc = new GregorianCalendar();
-        String currentDate = new
-                SimpleDateFormat("dd/MM/yyyy").format(gc.getTime());
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(gc.getTime());
         return currentDate;
     }
 
-    public String getDeadLine() {
+    public String getDeadLine(){
         GregorianCalendar gc = new GregorianCalendar();
 
-        //Aggiungo 7 gironi alla data odierna
-        gc.add(gc.DATE, 7);
-        String currentDate = new
-                SimpleDateFormat("dd/MM/yyyy").format(gc.getTime());
+        //Aggiungo 30 giorni alla data odierna
+        gc.add(gc.DATE, 30);
+        String currentDate = new SimpleDateFormat("dd/MM/yyyy").format(gc.getTime());
 
         return currentDate;
     }

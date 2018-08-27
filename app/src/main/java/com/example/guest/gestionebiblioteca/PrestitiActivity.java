@@ -30,7 +30,7 @@ public class PrestitiActivity extends AppCompatActivity {
     private EditText mInputText;
     private Button mButtonInvia;
 
-    private PrestitiListAdapter prestitiListAdapter;
+    //private PrestitiListAdapter prestitiListAdapter;
     private RecyclerView rvPrestiti;
 
 
@@ -57,8 +57,8 @@ public class PrestitiActivity extends AppCompatActivity {
 
 
 
-        prestitiListAdapter = new PrestitiListAdapter(this,this,mDatabaseReference,user,mUserId);
-        rvPrestiti.setAdapter(prestitiListAdapter);
+       // prestitiListAdapter = new PrestitiListAdapter(this,this,mDatabaseReference,user,mUserId);
+       // rvPrestiti.setAdapter(prestitiListAdapter);
 
 
     }
@@ -78,81 +78,5 @@ public class PrestitiActivity extends AppCompatActivity {
             finish();
             startActivity(intentToLogin);
         }
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id= item.getItemId();
-        Intent intent;
-        if(user.equals("admin")){
-            switch (id) {
-                case R.id.profiloItem:
-                    intent = new Intent(this, PrenotaActivity.class);
-                    intent.putExtra("user","admin");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-                case R.id.addItem:
-                    intent = new Intent(this, AggiungiLibro.class);
-                    intent.putExtra("user","admin");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-                case R.id.catalogoItem:
-                    intent = new Intent(this, MainActivity.class);
-                    intent.putExtra("user","admin");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-
-            }
-
-        }else {
-            switch (id) {
-                case R.id.profiloItem:
-                    intent = new Intent(this, PrenotaActivity.class);
-                    intent.putExtra("user","user");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-                case R.id.prestitiItem:
-                    intent = new Intent(this, PrestitiActivity.class);
-                    intent.putExtra("user","user");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-                case R.id.catalogoItem:
-                    intent = new Intent(this, MainActivity.class);
-                    intent.putExtra("user","user");
-                    finish();
-                    startActivity(intent);
-                    break;
-
-
-            }
-        }
-
-        if(id==R.id.logoutItem){
-            Log.i(TAG,"Logout Selezionato");
-            //TODO logout
-            mAuth.signOut();
-            updateUI();
-        }
-        return super.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        if(user.equals("admin")){
-            getMenuInflater().inflate(R.menu.layout_menu_admin,menu);
-        }else{
-            getMenuInflater().inflate(R.menu.layout_menu,menu);
-        }
-        return true;
     }
 }

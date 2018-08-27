@@ -26,12 +26,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        String typeUser = getIntent().getStringExtra("user");
+
+
 
         CardView cerca = (CardView) findViewById(R.id.cerca_layout);
         CardView account = (CardView) findViewById(R.id.account_layout);
         CardView miei_libri = (CardView) findViewById(R.id.miei_libri);
         CardView stato_prestiti = (CardView) findViewById(R.id.StatoPrestitiLayout);
         CardView aggiungi_libro = (CardView) findViewById(R.id.aggiungi_libro);
+
+        if(!typeUser.equals("admin")){
+            aggiungi_libro.setVisibility(View.GONE);
+        }
 
         cerca.setOnClickListener(new View.OnClickListener() {
             @Override

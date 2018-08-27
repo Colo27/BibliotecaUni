@@ -9,8 +9,8 @@
     tools:context=".Cerca">
 
     <searchable xmlns:android="http://schemas.android.com/apk/res/android"
-        android:label="@string/app_label"
-        android:hint="@string/search_hint" >
+        android:label="a"
+        android:hint="b" >
     </searchable>
 
     <SearchView
