@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         CardView cerca = (CardView) findViewById(R.id.cerca_layout);
         CardView account = (CardView) findViewById(R.id.account_layout);
         CardView miei_libri = (CardView) findViewById(R.id.miei_libri);
-        CardView stato_prestiti = (CardView) findViewById(R.id.StatoPrestitiLayout);
         CardView aggiungi_libro = (CardView) findViewById(R.id.aggiungi_libro);
 
         if(!typeUser.equals("admin")){
@@ -61,14 +60,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent account = new Intent(getBaseContext(), MieiLibri.class);
                 startActivity(account);
-            }
-        });
-
-        stato_prestiti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent stato = new Intent(getBaseContext(), PrestitiActivity.class);
-                startActivity(stato);
             }
         });
 

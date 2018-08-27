@@ -19,9 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Cerca" />
-        <activity android:name=".StatoPrestiti" />
         <activity android:name=".AccountActivity" />
-        <activity android:name=".PrestitiActivity" />
 
         <activity android:name=".MainActivity"/>
 

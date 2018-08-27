@@ -77,7 +77,7 @@ public class PrenotaActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Prenotazione effettuata con successo", Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(this, PrestitiActivity.class);
+            Intent intent = new Intent(this, MieiLibri.class);
             intent.putExtra("user", "user");
             finish();
             startActivity(intent);
