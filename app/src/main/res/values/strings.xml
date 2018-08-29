@@ -111,6 +111,8 @@
     <string name="title_activity_aggiungi_libro">aggiungi_libro</string>
 
     <string name="common_google_play_services_unknown_issue">"Unknown issue."</string>
+    <string name="title_activity_recycleview_item_row">recycleview_item_row</string>
+    <string name="title_activity_restituisci">Restituisci</string>
 
 
 </resources>

@@ -34,7 +34,6 @@ public class MieiLibri extends AppCompatActivity {
     private String mTitolo;
     private String mScadenza;
     private String mKey;
-
     private TextView mInputTitolo;
     private TextView mInputAutore;
     private TextView mInputScadenza;

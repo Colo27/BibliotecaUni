@@ -17,6 +17,16 @@
         android:textStyle="bold" />
 
 
+    <TextView
+        android:id="@+id/ed_autore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp"
+        android:textStyle="italic" />
+
 
     <ImageView
         android:id="@+id/imageView1"
@@ -32,21 +42,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/libro" />
 
-    <TextView
-        android:id="@+id/ed_autore"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
-        android:textStyle="italic" />
 
     <Button
-        android:id="@+id/btnPrenotaLibro"
+        android:id="@+id/btnRestituisciLibro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="btnPrenotaOnClick"
-        android:text="prenota libro" />
+        android:onClick="btnRestituisciOnClick"
+        android:text="restituisci" />
 
 </LinearLayout>
