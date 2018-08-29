@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".Cerca">
 
+    <!--
     <searchable xmlns:android="http://schemas.android.com/apk/res/android"
         android:label="a"
         android:hint="b" >
@@ -25,7 +26,7 @@
 
 
     />
-
+-->
 
    <android.support.v7.widget.RecyclerView
        android:layout_width="match_parent"

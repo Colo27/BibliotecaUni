@@ -47,23 +47,14 @@ public class MieiLibri extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         mAuth = FirebaseAuth.getInstance();
         mUser=mAuth.getCurrentUser();
         mUserId = mUser.getUid();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
 
-        mInputAutore=(TextView)findViewById(R.id.ed_autore);
-        mInputTitolo=(TextView)findViewById(R.id.ed_titolo);
+        //mInputAutore=(TextView)findViewById(R.id.ed_autore);
+        //mInputTitolo=(TextView)findViewById(R.id.ed_titolo);
 
         //mInputScadenza=(TextView)findViewById(R.id.ed_scadenza);
         //btnRemove=(Button)findViewById(R.id.btnRemove);
@@ -71,20 +62,21 @@ public class MieiLibri extends AppCompatActivity {
         user= getIntent().getStringExtra("user");
 
 
-        mAutore=getIntent().getStringExtra("autore");
-        mTitolo= getIntent().getStringExtra("titolo");
+        //mAutore=getIntent().getStringExtra("autore");
+        //mTitolo= getIntent().getStringExtra("titolo");
 
-        mKey= getIntent().getStringExtra("key");
-        mScadenza = getIntent().getStringExtra("scadenza");
+        //mKey= getIntent().getStringExtra("key");
+        //mScadenza = getIntent().getStringExtra("scadenza");
 
 
-        mInputAutore.setText("Autore: "+mAutore);
-        mInputTitolo.setText("Titolo:"+mTitolo);
-        mInputScadenza.setText("Data scadenza: "+mScadenza);
+        //mInputAutore.setText("Autore: "+mAutore);
+        //mInputTitolo.setText("Titolo:"+mTitolo);
+        //mInputScadenza.setText("Data scadenza: "+mScadenza);
 
-        setTitle(mTitolo);
+        //setTitle(mTitolo);
     }
-    public void btnRemoveOnClick(View view){
+
+    /*public void btnRemoveOnClick(View view){
 
         mDatabaseReference.child("users").child(mUserId).child(mKey).removeValue();
 
@@ -107,5 +99,5 @@ public class MieiLibri extends AppCompatActivity {
             finish();
             startActivity(intentToLogin);
         }
-    }
+    }*/
 }
