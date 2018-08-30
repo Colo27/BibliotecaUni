@@ -49,6 +49,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
+        android:layout_marginLeft="10dp"
         android:text="Data Inizio Prestito: " />
 
     <TextView
@@ -58,6 +59,7 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15dp"
+        android:layout_marginLeft="10dp"
         android:text="Data Fine Prestito: " />
 
 
@@ -66,6 +68,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="restituisci" />
+        android:layout_margin="10dp"
+        android:text="restituisci"
+        />
 
 </LinearLayout>
