@@ -37,13 +37,9 @@
             android:label="@string/title_activity_aggiungi_libro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".recycleview_item_row"
-            android:label="@string/title_activity_recycleview_item_row"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Restituisci"
             android:label="@string/title_activity_restituisci"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

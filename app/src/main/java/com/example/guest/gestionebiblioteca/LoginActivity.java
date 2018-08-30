@@ -29,6 +29,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -49,18 +50,8 @@ public class LoginActivity extends AppCompatActivity {
     private String emailAdmin="colosplash27@gmail.com";
     private FirebaseAuth mAuth;
 
-    private static final String[] DUMMY_CREDENTIALS = new String[]{
-            "foo@example.com:hello", "bar@example.com:world"
-    };
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
-
-    // UI references.
     private EditText mEmailView;
     private EditText mPasswordView;
-    private View mProgressView;
-    private View mLoginFormView;
     private Button mEmailSignInButton;
     private TextView mRegistrati;
 
@@ -91,9 +82,6 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        mLoginFormView = findViewById(R.id.login_form);
-        mProgressView = findViewById(R.id.login_progress);
     }
 
     private void attemptLogin() {
@@ -135,15 +123,8 @@ public class LoginActivity extends AppCompatActivity {
             // form field with an error.
             focusView.requestFocus();
         } else {
-            // Show a progress spinner, and kick off a background task to
-            // perform the user login attempt.
 
             loginUser(email, password);
-
-
-            /*showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);*/
         }
     }
 
@@ -171,13 +152,16 @@ public class LoginActivity extends AppCompatActivity {
             intent.putExtra("email", email);
 
             if(user.getEmail().equals(emailAdmin)){
-                intent.putExtra("user", "admin");
-
+                intent.putExtra("userType", "admin");
             }else{
-                intent.putExtra("user", "user");
+                intent.putExtra("userType", "user");
             }
 
             startActivity(intent);
+        }
+
+        else {
+            Toast.makeText(this, "Credenziali errate o utenza non esistente", Toast.LENGTH_SHORT).show();
         }
 
     }
