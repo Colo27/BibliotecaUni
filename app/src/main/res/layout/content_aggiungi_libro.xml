@@ -11,28 +11,32 @@
     <EditText
         android:id="@+id/ed_titolo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Titolo"
-        android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
+        android:layout_height="79dp"
         android:layout_marginTop="30dp"
-        />
+        android:layout_marginLeft="20dp"
+        android:hint="Titolo"
+        android:layout_marginRight="20dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/ed_autore"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
         android:hint="Autore"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
-        android:layout_marginTop="50dp"
-        />
+        android:textSize="15sp" />
 
     <Button
         android:id="@+id/button_add"
-        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="35dp"
         android:text="aggiungi libro" />
 
 </LinearLayout>
