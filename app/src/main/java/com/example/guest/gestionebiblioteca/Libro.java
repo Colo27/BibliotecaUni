@@ -4,6 +4,8 @@ public class Libro {
 
     private String mAutore;
     private String mTitolo;
+    private String mStart;
+    private String mEnd;
 
     public Libro(String autore, String titolo) {
         this.mAutore = autore;
@@ -11,6 +13,13 @@ public class Libro {
     }
 
     public Libro(){}
+
+    public Libro(String mAutore, String mTitolo, String mStart, String mEnd) {
+        this.mAutore = mAutore;
+        this.mTitolo = mTitolo;
+        this.mStart = mStart;
+        this.mEnd = mEnd;
+    }
 
     public String getmAutore() {
         return mAutore;
@@ -26,5 +35,21 @@ public class Libro {
 
     public void setmTitolo(String mTitolo) {
         this.mTitolo = mTitolo;
+    }
+
+    public String getmStart() {
+        return mStart;
+    }
+
+    public void setmStart(String mStart) {
+        this.mStart = mStart;
+    }
+
+    public String getmEnd() {
+        return mEnd;
+    }
+
+    public void setmEnd(String mEnd) {
+        this.mEnd = mEnd;
     }
 }

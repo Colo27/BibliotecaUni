@@ -107,19 +107,22 @@ public class ScaffaleAdapter extends RecyclerView.Adapter<ScaffaleAdapter.Scaffa
 
         libros.add(libro);
 
-        holder.container.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, PrenotaActivity.class);
-                intent.putExtra("titolo", libros.get(position).getmTitolo());
-                intent.putExtra("autore", libros.get(position).getmAutore());
-                intent.putExtra("key", snapshot.getKey());
-                intent.putExtra("user", mUser);
+        if(!mUser.equals("admin")) {
+            holder.container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                mContext.startActivity(intent);
-            }
-        });
+                    Intent intent = new Intent(mContext, PrenotaActivity.class);
+                    intent.putExtra("titolo", libros.get(position).getmTitolo());
+                    intent.putExtra("autore", libros.get(position).getmAutore());
+                    intent.putExtra("key", snapshot.getKey());
+                    intent.putExtra("user", mUser);
+
+                    mContext.startActivity(intent);
+                }
+            });
+        }
     }
 
     @Override

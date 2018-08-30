@@ -38,17 +38,15 @@ public class PrenotaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_prenota);
 
         mAuth = FirebaseAuth.getInstance();
-        mAuth = FirebaseAuth.getInstance();
-        mUser=mAuth.getCurrentUser();
+        mUser = mAuth.getCurrentUser();
         mUserId = mUser.getUid();
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
 
+        mInputAutore = (TextView) findViewById(R.id.ed_autore);
+        mInputTitolo = (TextView) findViewById(R.id.ed_titolo);
+        btnPrenota = (Button) findViewById(R.id.btnPrenotaLibro);
 
-        mInputAutore=(TextView)findViewById(R.id.ed_autore);
-        mInputTitolo=(TextView)findViewById(R.id.ed_titolo);
-        btnPrenota=(Button)findViewById(R.id.btnPrenotaLibro);
-
-        user= getIntent().getStringExtra("user");
+        user = getIntent().getStringExtra("user");
 
 
         mAutore = getIntent().getStringExtra("autore");
@@ -56,42 +54,23 @@ public class PrenotaActivity extends AppCompatActivity {
         mKey = getIntent().getStringExtra("key");
 
 
-        mInputAutore.setText("Autore: "+mAutore);
-        mInputTitolo.setText("Titolo: "+mTitolo);
-
-        setTitle(mTitolo);
-
-
+        mInputAutore.setText(mAutore);
+        mInputTitolo.setText(mTitolo);
     }
+
     public void btnPrenotaOnClick(View view) {
-        if (user.equals("admin")) {
-            Toast.makeText(this, "Operazione non concessa", Toast.LENGTH_LONG).show();
-        } else {
-            Prenotazione prenotazione = new Prenotazione(new Libro(mAutore, mTitolo), getToday(), getDeadLine());
+        Libro prenotazione = new Libro(mAutore, mTitolo, getToday(), getDeadLine());
 
-            mDatabaseReference.child("users").child(mUserId).push().setValue(prenotazione);
+        mDatabaseReference.child("users").child(mUserId).push().setValue(prenotazione);
 
+        //mDatabaseReference.child("users").child("admin").child(mAutore).child(mKey).removeValue();
+        mDatabaseReference.child("users").child("admin").child(mKey).removeValue();
 
-            mDatabaseReference.child("users").child("admin").child(mAutore).child(mKey).removeValue();
+        Toast.makeText(this, "Prenotazione effettuata con successo", Toast.LENGTH_LONG).show();
 
-            Toast.makeText(this, "Prenotazione effettuata con successo", Toast.LENGTH_LONG).show();
-
-            Intent intent = new Intent(this, MieiLibriActivity.class);
-            intent.putExtra("user", "user");
-            finish();
-            startActivity(intent);
-        }
-    }
-
-    private void updateUI(){
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser == null) {
-            // Name, email address, and profile photo Url
-            Intent intentToLogin = new Intent(this, MainActivity.class);
-            finish();
-            startActivity(intentToLogin);
-        }
+        Intent intent = new Intent(this, MieiLibriActivity.class);
+        intent.putExtra("user", "user");
+        startActivity(intent);
     }
 
     public String getToday() {
@@ -100,7 +79,7 @@ public class PrenotaActivity extends AppCompatActivity {
         return currentDate;
     }
 
-    public String getDeadLine(){
+    public String getDeadLine() {
         GregorianCalendar gc = new GregorianCalendar();
 
         //Aggiungo 30 giorni alla data odierna
