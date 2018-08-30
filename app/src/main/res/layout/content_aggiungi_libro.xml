@@ -15,7 +15,7 @@
         android:hint="Titolo"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="30dp"
         />
 
     <EditText
@@ -25,12 +25,12 @@
         android:hint="Autore"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="15sp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         />
 
     <Button
         android:id="@+id/button_add"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="35dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="aggiungi libro" />
