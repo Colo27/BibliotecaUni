@@ -105,16 +105,15 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="title_activity_prenota">PrenotaActivity</string>
+    <string name="title_activity_prenota">Prenota</string>
     <string name="title_activity_registrati">Registrati</string>
-    <string name="title_activity_miei_libri">miei_libri</string>
-    <string name="title_activity_aggiungi_libro">aggiungi_libro</string>
+    <string name="title_activity_miei_libri">Miei Libri</string>
+    <string name="title_activity_aggiungi_libro">Aggiungi Libro</string>
 
     <string name="common_google_play_services_unknown_issue">"Unknown issue."</string>
-    <string name="title_activity_recycleview_item_row">recycleview_item_row</string>
     <string name="title_activity_restituisci">Restituisci</string>
-    <string name="login"><u>Già registrato? Vai al login!</u></string>
 
+    <string name="login"><u>Già registrato? Vai al login!</u></string>
     <string name="registrati"><u>Non hai un account? Registrati!</u></string>
 
 
