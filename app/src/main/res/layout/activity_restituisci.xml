@@ -10,10 +10,10 @@
         android:id="@+id/edTitolo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:textAlignment="center"
+       android:layout_marginTop="10dp"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
+        android:textSize="40dp"
         android:textStyle="bold" />
 
 
@@ -21,17 +21,17 @@
         android:id="@+id/edAutore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
+        android:textAlignment="center"
+        android:layout_marginTop="15dp"
         android:textColor="@color/colorPrimaryDark"
-        android:textSize="15sp"
+        android:textSize="30dp"
         android:textStyle="italic" />
 
 
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="182dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
@@ -42,11 +42,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/libro" />
 
+    <TextView
+        android:id="@+id/data_inizio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"
+        android:text="Data Inizio Prestito: " />
+
+    <TextView
+        android:id="@+id/data_fine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="15dp"
+        android:text="Data Fine Prestito: " />
+
 
     <Button
         android:id="@+id/btnRestituisciLibro"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="restituisci" />
 
 </LinearLayout>

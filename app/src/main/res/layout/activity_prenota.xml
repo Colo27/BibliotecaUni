@@ -7,20 +7,7 @@
     tools:context=".PrenotaActivity"
     >
 
-    <android.support.design.widget.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay"
-        >
-
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
+    <!--Eli esci le zinne-->
 
     <include
         layout="@layout/content_prenota"
@@ -28,7 +15,8 @@
         android:layout_marginTop="40dp"
         android:layout_height="358dp"
         tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="220dp" />
+        tools:layout_editor_absoluteY="220dp"
+        />
 
 
 
