@@ -13,22 +13,28 @@ public class AccountActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
+    private String mTypeUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account);
 
+        mTypeUser = getIntent().getStringExtra("userType");
+
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
 
-        TextView name = findViewById(R.id.textView3);
+        TextView name = findViewById(R.id.profileName);
 
-        name.setText(mUser.getDisplayName());
+        if(!mTypeUser.equals("admin")) {
+            name.setText(mUser.getDisplayName());
+        }
+        else{
+            name.setText("Admin");
+        }
 
-        TextView informazioni = findViewById(R.id.textView5);
-
-        TextView logout = findViewById(R.id.textView7);
+        TextView logout = findViewById(R.id.logoutTv);
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
