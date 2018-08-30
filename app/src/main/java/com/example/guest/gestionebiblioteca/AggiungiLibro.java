@@ -1,18 +1,12 @@
 package com.example.guest.gestionebiblioteca;
 
-
-
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -23,12 +17,10 @@ public class AggiungiLibro extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
-
     private DatabaseReference mDatabaseReference;
-    private String mUserId;
-    private String user;
 
-    //UI
+    private String mUserId;
+
     private EditText mTitolo;
     private EditText mAutore;
 
@@ -40,12 +32,8 @@ public class AggiungiLibro extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        user= getIntent().getStringExtra("user");
-
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-
-        setTitle(mAuth.getCurrentUser().getDisplayName());
         mUserId = mUser.getUid();
 
         mAutore =(EditText)findViewById(R.id.ed_autore);
@@ -56,9 +44,13 @@ public class AggiungiLibro extends AppCompatActivity {
         aggiungiLibro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDatabaseReference.child("users").child("admin").push().setValue(new Libro(mAutore.getText().toString(), mTitolo.getText().toString()));
-                Intent intent = new Intent(AggiungiLibro.this, MainActivity.class);
-                startActivity(intent);
+                Libro libro = new Libro(mAutore.getText().toString(), mTitolo.getText().toString());
+                mDatabaseReference.child("users").child("admin").push().setValue(libro);
+
+                mAutore.setText("");
+                mTitolo.setText("");
+
+                Toast.makeText(AggiungiLibro.this, "Libro aggiunto con successo", Toast.LENGTH_SHORT).show();
             }
         });
     }
