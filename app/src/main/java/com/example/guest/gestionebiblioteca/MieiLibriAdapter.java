@@ -7,8 +7,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -23,11 +21,10 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
 
     private Activity mActivity;
     private DatabaseReference mDataBaseReference;
-    private String mDisplayName;
     private ArrayList<DataSnapshot> mDataSnapshot;
-    private ArrayList<Libro> moviesList = new ArrayList<>();
+    private ArrayList<Libro> libros = new ArrayList<>();
     private String mUser;
-    private  MieiLibriViewHolder vholder;
+    private MieiLibriViewHolder vholder;
     private Context mContext;
 
     private ChildEventListener mListener = new ChildEventListener() {
@@ -59,13 +56,13 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
         }
     };
 
-    public MieiLibriAdapter(Context context, Activity activity, DatabaseReference ref, String categoria, String user){
+    public MieiLibriAdapter(Context context, Activity activity, DatabaseReference ref, String user){
 
         mActivity = activity;
-        mDataBaseReference  = ref.child("users").child(user);
+        mDataBaseReference  = ref.child("users").child("admin");
         mDataSnapshot = new ArrayList<>();
         mContext = context;
-        mUser=user;
+        mUser = user;
 
         mDataBaseReference.addChildEventListener(mListener);
 
@@ -94,7 +91,6 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
         vholder = new MieiLibriViewHolder(v);
 
         return vholder;
-
     }
 
     @Override
@@ -105,16 +101,17 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
         final Libro libro = snapshot.getValue(Libro.class);
 
         holder.titolo.setText(libro.getmTitolo());
+        holder.autore.setText(libro.getmAutore());
 
-        moviesList.add(libro);
+        libros.add(libro);
 
         holder.titolo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, Restituisci.class);
-                intent.putExtra("titolo", moviesList.get(position).getmTitolo());
-                intent.putExtra("autore", moviesList.get(position).getmAutore());
+                Intent intent = new Intent(mContext, PrenotaActivity.class);
+                intent.putExtra("titolo", libros.get(position).getmTitolo());
+                intent.putExtra("autore", libros.get(position).getmAutore());
                 intent.putExtra("key", snapshot.getKey());
                 intent.putExtra("user", mUser);
 

@@ -10,13 +10,21 @@ public class Libro {
         this.mTitolo = titolo;
     }
 
+    public Libro(){}
+
     public String getmAutore() {
         return mAutore;
+    }
+
+    public void setmAutore(String mAutore) {
+        this.mAutore = mAutore;
     }
 
     public String getmTitolo() {
         return mTitolo;
     }
 
-
+    public void setmTitolo(String mTitolo) {
+        this.mTitolo = mTitolo;
+    }
 }

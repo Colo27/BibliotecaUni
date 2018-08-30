@@ -8,31 +8,14 @@
     android:orientation="vertical"
     tools:context=".Cerca">
 
-    <!--
-    <searchable xmlns:android="http://schemas.android.com/apk/res/android"
-        android:label="a"
-        android:hint="b" >
-    </searchable>
-
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_margin="10dp"
-        android:layout_marginTop="2dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:drawableLeft="@drawable/cercaicona"
-        android:hint="Cerca"
-
-
-
-    />
--->
-
    <android.support.v7.widget.RecyclerView
+       android:id="@+id/listaLibri"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:layout_marginHorizontal="15dp"
-
+       android:layout_marginStart="15dp"
+       android:layout_marginEnd="15dp"
+       android:layout_marginTop="15dp"
+       android:layout_marginBottom="15dp"
        >
 
 
