@@ -64,7 +64,7 @@ public class RestituisciActivity extends AppCompatActivity {
                 Toast.makeText(RestituisciActivity.this, "Restituzione effettuata con successo", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent(RestituisciActivity.this, MainActivity.class);
-                intent.putExtra("user", "user");
+                intent.putExtra("userType", "user");
                 startActivity(intent);
             }
         });

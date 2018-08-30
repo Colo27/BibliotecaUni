@@ -27,8 +27,6 @@ public class MieiLibriActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_miei_libri);
 
-        zeroLibri = findViewById(R.id.noLibri);
-
         mUserType = getIntent().getStringExtra("userType");
 
         mAuth = FirebaseAuth.getInstance();
@@ -40,12 +38,5 @@ public class MieiLibriActivity extends AppCompatActivity {
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mLibriAdapter = new MieiLibriAdapter(this, this, mDatabaseReference, mUserType, mUserId);
         mListaLibri.setAdapter(mLibriAdapter);
-
-        if(mLibriAdapter.getItemCount() == 0){
-            zeroLibri.setVisibility(View.VISIBLE);
-        }
-        else{
-            zeroLibri.setVisibility(View.INVISIBLE);
-        }
     }
 }

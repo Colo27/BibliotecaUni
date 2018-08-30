@@ -17,7 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Cerca" />
+        <activity android:name=".ScaffaleActivity" />
         <activity android:name=".AccountActivity" />
         <activity android:name=".MainActivity" />
         <activity
@@ -25,7 +25,7 @@
             android:label="@string/title_activity_prenota"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Registrati"
+            android:name=".RegistratiActivity"
             android:label="@string/title_activity_registrati"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -33,7 +33,7 @@
             android:label="@string/title_activity_miei_libri"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".AggiungiLibro"
+            android:name=".AggiungiLibroActivity"
             android:label="@string/title_activity_aggiungi_libro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

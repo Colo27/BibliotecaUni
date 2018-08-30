@@ -8,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Cerca extends AppCompatActivity {
+public class ScaffaleActivity extends AppCompatActivity {
 
     private String mUserType;
     private RecyclerView mListaLibri;
