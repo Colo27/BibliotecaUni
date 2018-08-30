@@ -19,8 +19,6 @@ public class AggiungiLibro extends AppCompatActivity {
     private FirebaseUser mUser;
     private DatabaseReference mDatabaseReference;
 
-    private String mUserId;
-
     private EditText mTitolo;
     private EditText mAutore;
 
@@ -34,7 +32,6 @@ public class AggiungiLibro extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         mUser = mAuth.getCurrentUser();
-        mUserId = mUser.getUid();
 
         mAutore =(EditText)findViewById(R.id.ed_autore);
         mTitolo=(EditText) findViewById(R.id.ed_titolo);
