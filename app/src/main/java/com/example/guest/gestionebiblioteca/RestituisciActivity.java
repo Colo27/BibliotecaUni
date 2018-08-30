@@ -23,11 +23,15 @@ public class RestituisciActivity extends AppCompatActivity {
     private String mUserId;
     private String mAutore;
     private String mTitolo;
+    private String mStart;
+    private String mEnd;
     private String mKey;
 
 
     private TextView textTitolo;
     private TextView textAutore;
+    private TextView textInizio;
+    private TextView textFine;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +42,8 @@ public class RestituisciActivity extends AppCompatActivity {
 
         textTitolo = findViewById(R.id.edTitolo);
         textAutore = findViewById(R.id.edAutore);
+        textInizio = findViewById(R.id.data_inizio);
+        textFine = findViewById(R.id.data_fine);
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -46,10 +52,14 @@ public class RestituisciActivity extends AppCompatActivity {
 
         mAutore = getIntent().getStringExtra("autore");
         mTitolo = getIntent().getStringExtra("titolo");
+        mStart = getIntent().getStringExtra("inizio");
+        mEnd = getIntent().getStringExtra("fine");
         mKey = getIntent().getStringExtra("key");
 
         textTitolo.setText(mTitolo);
         textAutore.setText(mAutore);
+        textInizio.setText("Data Inizio Prestito: " + mStart);
+        textFine.setText("Data Fine Prestito: " + mEnd);
 
         final Button restituisci = (Button) findViewById(R.id.btnRestituisciLibro);
         restituisci.setOnClickListener(new View.OnClickListener() {

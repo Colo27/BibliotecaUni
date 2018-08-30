@@ -116,6 +116,8 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
                 Intent intent = new Intent(mContext, RestituisciActivity.class);
                 intent.putExtra("titolo", libros.get(position).getmTitolo());
                 intent.putExtra("autore", libros.get(position).getmAutore());
+                intent.putExtra("inizio", libros.get(position).getmStart());
+                intent.putExtra("fine", libros.get(position).getmEnd());
                 intent.putExtra("key", snapshot.getKey());
                 intent.putExtra("user", mUser);
 
