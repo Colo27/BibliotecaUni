@@ -69,7 +69,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <View
                 android:id="@+id/view"
@@ -90,7 +91,8 @@
         android:layout_marginStart="24dp"
         android:orientation="vertical"
         android:layout_below="@+id/lay_nome"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -140,7 +142,7 @@
         android:layout_below="@+id/lay_email"
 
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -193,7 +195,7 @@
         android:layout_below="@+id/lay_password"
         android:password="true"
         android:orientation="vertical"
-        android:layout_marginTop="20dp">
+        android:layout_marginTop="30dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -244,7 +246,7 @@
         android:layout_height="48dp"
         android:layout_below="@+id/lay_passwordConfirm"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="30dp"
         android:text="REGISTRATI"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:textColor="#000"
@@ -257,12 +259,13 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="68dp"
         android:clickable="true"
         android:text="@string/login"
         android:textColor="#3d50df"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        />
 
 
 </RelativeLayout>
