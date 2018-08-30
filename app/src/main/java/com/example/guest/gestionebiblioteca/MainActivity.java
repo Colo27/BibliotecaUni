@@ -34,13 +34,22 @@ public class MainActivity extends AppCompatActivity {
         if(!mTypeUser.equals("admin")){
             mAggiungiLibro.setVisibility(View.GONE);
         }
+        if(mTypeUser.equals("admin")){
+            mMieiLibri.setVisibility(View.GONE);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mTypeUser = getIntent().getStringExtra("userType");
     }
 
     private void setCardViewListeners(){
         mCerca.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent cerca = new Intent(getBaseContext(), Cerca.class);
+                Intent cerca = new Intent(getBaseContext(), ScaffaleActivity.class);
                 cerca.putExtra("userType", mTypeUser);
                 startActivity(cerca);
             }
@@ -67,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         mAggiungiLibro.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent aggiungiLibro = new Intent(getBaseContext(), AggiungiLibro.class);
+                Intent aggiungiLibro = new Intent(getBaseContext(), AggiungiLibroActivity.class);
                 aggiungiLibro.putExtra("userType", mTypeUser);
                 startActivity(aggiungiLibro);
             }

@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AggiungiLibro extends AppCompatActivity {
+public class AggiungiLibroActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private FirebaseUser mUser;
@@ -47,7 +47,7 @@ public class AggiungiLibro extends AppCompatActivity {
                 mAutore.setText("");
                 mTitolo.setText("");
 
-                Toast.makeText(AggiungiLibro.this, "Libro aggiunto con successo", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AggiungiLibroActivity.this, "Libro aggiunto con successo", Toast.LENGTH_SHORT).show();
             }
         });
     }

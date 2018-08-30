@@ -129,6 +129,10 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
         return mDataSnapshot.size();
     }
 
+    public int getLibrosCount(){
+        return libros.size();
+    }
+
 
     public void clean(){
         mDataBaseReference.removeEventListener(mListener);
