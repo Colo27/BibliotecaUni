@@ -13,7 +13,7 @@ public class Cerca extends AppCompatActivity {
     private String mUserType;
     private RecyclerView mListaLibri;
     private DatabaseReference mDatabaseReference;
-    private MieiLibriAdapter mLibriAdapter;
+    private ScaffaleAdapter mLibriAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class Cerca extends AppCompatActivity {
         mListaLibri.setLayoutManager(new LinearLayoutManager(this));
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference();
-        mLibriAdapter = new MieiLibriAdapter(this, this, mDatabaseReference, mUserType);
+        mLibriAdapter = new ScaffaleAdapter(this, this, mDatabaseReference, mUserType);
         mListaLibri.setAdapter(mLibriAdapter);
     }
 }

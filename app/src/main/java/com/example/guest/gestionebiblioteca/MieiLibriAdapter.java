@@ -3,6 +3,7 @@ package com.example.guest.gestionebiblioteca;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
     private ArrayList<DataSnapshot> mDataSnapshot;
     private ArrayList<Libro> libros = new ArrayList<>();
     private String mUser;
+    private String mUserId;
     private MieiLibriViewHolder vholder;
     private Context mContext;
 
@@ -56,13 +58,14 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
         }
     };
 
-    public MieiLibriAdapter(Context context, Activity activity, DatabaseReference ref, String user){
+    public MieiLibriAdapter(Context context, Activity activity, DatabaseReference ref, String user, String id){
 
         mActivity = activity;
-        mDataBaseReference  = ref.child("users").child("admin");
+        mDataBaseReference  = ref.child("users").child(id);
         mDataSnapshot = new ArrayList<>();
         mContext = context;
         mUser = user;
+        mUserId = id;
 
         mDataBaseReference.addChildEventListener(mListener);
 
@@ -73,12 +76,13 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
 
         TextView titolo;
         TextView autore;
+        CardView container;
 
         public MieiLibriViewHolder(View itemView) {
             super(itemView);
-            titolo =(TextView)itemView.findViewById(R.id.item_titolo);
-            autore =(TextView)itemView.findViewById(R.id.item_autore);
-
+            titolo =(TextView)itemView.findViewById(R.id.itemTitolo);
+            autore =(TextView)itemView.findViewById(R.id.itemAutore);
+            container = (CardView) itemView.findViewById(R.id.cardContainer);
         }
     }
 
@@ -105,11 +109,11 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
 
         libros.add(libro);
 
-        holder.titolo.setOnClickListener(new View.OnClickListener() {
+        holder.container.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(mContext, PrenotaActivity.class);
+                Intent intent = new Intent(mContext, RestituisciActivity.class);
                 intent.putExtra("titolo", libros.get(position).getmTitolo());
                 intent.putExtra("autore", libros.get(position).getmAutore());
                 intent.putExtra("key", snapshot.getKey());
@@ -129,7 +133,4 @@ public class MieiLibriAdapter extends RecyclerView.Adapter<MieiLibriAdapter.Miei
     public void clean(){
         mDataBaseReference.removeEventListener(mListener);
     }
-
-
 }
-

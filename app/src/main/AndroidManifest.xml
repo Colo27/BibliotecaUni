@@ -29,7 +29,7 @@
             android:label="@string/title_activity_registrati"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".MieiLibri"
+            android:name=".MieiLibriActivity"
             android:label="@string/title_activity_miei_libri"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -37,7 +37,7 @@
             android:label="@string/title_activity_aggiungi_libro"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".Restituisci"
+            android:name=".RestituisciActivity"
             android:label="@string/title_activity_restituisci"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

@@ -58,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
         mMieiLibri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent mieiLibri = new Intent(getBaseContext(), MieiLibri.class);
+                Intent mieiLibri = new Intent(getBaseContext(), MieiLibriActivity.class);
                 mieiLibri.putExtra("userType", mTypeUser);
                 startActivity(mieiLibri);
             }

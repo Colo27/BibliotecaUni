@@ -14,7 +14,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.GregorianCalendar;
 
 public class PrenotaActivity extends AppCompatActivity {
@@ -77,7 +76,7 @@ public class PrenotaActivity extends AppCompatActivity {
 
             Toast.makeText(this, "Prenotazione effettuata con successo", Toast.LENGTH_LONG).show();
 
-            Intent intent = new Intent(this, MieiLibri.class);
+            Intent intent = new Intent(this, MieiLibriActivity.class);
             intent.putExtra("user", "user");
             finish();
             startActivity(intent);

@@ -16,10 +16,7 @@
        android:layout_marginEnd="15dp"
        android:layout_marginTop="15dp"
        android:layout_marginBottom="15dp"
-       >
-
-
-   </android.support.v7.widget.RecyclerView>
+       />
 
 
 </LinearLayout>
