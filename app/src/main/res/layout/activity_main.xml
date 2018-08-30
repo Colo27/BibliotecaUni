@@ -151,7 +151,7 @@
                 <ImageView
                     android:layout_width="90dp"
                     android:layout_height="90dp"
-                    android:background="#ff00f4"
+                    android:background="#e51919"
                     android:src="@drawable/ic_add_circle_outline_black_24dp"
                     android:padding="10dp"/>
                 <TextView
